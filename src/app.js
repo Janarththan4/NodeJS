@@ -1,9 +1,27 @@
 const express = require("express");
 const app = express();
 const PORT = 3000;
+const customers = [
+  {
+    name: "Joel",
+    industry: "Music",
+  },
+  {
+    name: "Zack",
+    industry: "Sports",
+  },
+  {
+    name: "Luke",
+    industry: "Health",
+  },
+];
 
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.send("Welcome!");
+});
+
+app.get("/api/customers", (req, res) => {
+  res.send({ data: customers });
 });
 
 app.post("/", (req, res) => {
